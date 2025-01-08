@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-recaptcha": {
+    "@tots/ng-recaptcha": {
       "projectType": "library",
       "root": "projects/ng-recaptcha",
       "sourceRoot": "projects/ng-recaptcha/src",
