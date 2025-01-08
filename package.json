@@ -8,7 +8,7 @@
     "demo:build": "yarn demo:file-gen && ng build demo --configuration production && yarn demo:copy-entrypoints",
     "demo:copy-entrypoints": "ts-node --project ./tsconfig.node.json ./projects/demo/bin/copy-entrypoints.ts",
     "demo:serve-http": "http-server ./dist/demo -a localhost -p 9000 -c-1",
-    "demo:publish-gh-pages": "gh-pages --dist dist/demo/ng-recaptcha --repo https://github.com/DethAriel/ng-recaptcha --no-history",
+    "demo:publish-gh-pages": "gh-pages --dist dist/demo/ng-recaptcha --repo https://github.com/matiascamiletti/ng-recaptcha --no-history",
     "clean": "rimraf dist",
     "changelog": "conventional-changelog --preset angular --infile CHANGELOG.md --same-file",
     "github-release": "conventional-github-releaser --preset angular",
@@ -18,7 +18,8 @@
     "version": "yarn changelog && git add CHANGELOG.md && cp CHANGELOG.md dist/ng-recaptcha/CHANGELOG.md",
     "lint": "eslint projects --ext .js,.ts,.html",
     "prepare": "husky install",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish": "ng build @tots/ng-recaptcha --configuration production && npm publish dist/ng-recaptcha --access public"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
